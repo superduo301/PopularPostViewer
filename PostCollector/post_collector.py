@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 def read_posts():
-    source = "Clien"
+    source = ""
 
     # req = requests.get('http://www.ppomppu.co.kr/hot.php?category=1')
     req = requests.get('https://www.clien.net/service/group/community')
