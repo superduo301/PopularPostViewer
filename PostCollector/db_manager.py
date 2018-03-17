@@ -9,10 +9,11 @@ from models import Post, Base
 print(sqlalchemy.__version__)
 
 
-engine = create_engine('postgresql+psycopg2://postgres@localhost/posts_db', echo=True)
+engine = create_engine('postgresql+psycopg2://postgres@localhost/posts', echo=True)
 
 # init
-drop_database(engine.url)
+if database_exists(engine.url):
+    drop_database(engine.url)
 
 if not database_exists(engine.url):
     create_database(engine.url)
@@ -46,29 +47,3 @@ def read():
 
 def close():
     session.close()
-
-
-
-    # -- Table: public.posts
-    #
-    # -- DROP TABLE public.posts;
-    #
-    # CREATE TABLE public.posts
-    # (
-    #     id serial NOT NULL,
-    # source character varying(64) COLLATE pg_catalog."default",
-    #                                                 category character varying(64) COLLATE pg_catalog."default",
-    #                                                                                                   title character varying(256) COLLATE pg_catalog."default" NOT NULL,
-    #                                                                                                                                                                 author character varying(64) COLLATE pg_catalog."default",
-    #                                                                                                                                                                                                                 hit integer,
-    #                                                                                                                                                                                                                     url character varying(2000) COLLATE pg_catalog."default",
-    #                                                                                                                                                                                                                                                                    "time" timestamp with time zone,
-    # CONSTRAINT posts_pkey PRIMARY KEY (id)
-    # )
-    # WITH (
-    #     OIDS = FALSE
-    # )
-    # TABLESPACE pg_default;
-    #
-    # ALTER TABLE public.posts
-    # OWNER to postgres;
