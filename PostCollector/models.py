@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Sequence, TIMESTAMP, DateTime
+from sqlalchemy import Column, Integer, String, Sequence, TIMESTAMP, BigInteger
 
 Base = declarative_base()
 
@@ -12,7 +12,7 @@ class Post(Base):
     title = Column(String(256))
     author = Column(String(64))
     url = Column(String(2000))
-    url_hash = Column(Integer)
+    url_hash = Column(BigInteger)
     hit = Column(Integer)
     time = Column(TIMESTAMP)
 
