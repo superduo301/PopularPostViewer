@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PostCollector/PostCollector.iml" filepath="$PROJECT_DIR$/PostCollector/PostCollector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebService/WebService.iml" filepath="$PROJECT_DIR$/WebService/WebService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Webservice2/Webservice2.iml" filepath="$PROJECT_DIR$/Webservice2/Webservice2.iml" />
     </modules>
   </component>
 </project>
