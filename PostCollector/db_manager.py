@@ -9,7 +9,8 @@ from models import Post, Base
 print(sqlalchemy.__version__)
 
 
-engine = create_engine('postgresql+psycopg2://postgres@localhost/posts', echo=True)
+# engine = create_engine('postgresql+psycopg2://postgres@localhost/posts', echo=True)
+engine = create_engine('sqlite:///:memory:', echo=True)
 
 # init
 if database_exists(engine.url):
